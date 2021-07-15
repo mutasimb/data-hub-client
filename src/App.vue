@@ -1,32 +1,44 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="v-app-root">
+    <NavDrawer ref="drawer" :routes="routes" />
+    <AppBar
+      :drawer="drawer"
+      @toggle-drawer="$refs.drawer.drawer = !$refs.drawer.drawer"
+    />
+
+    <v-main :class="`${$route.meta.color} lighten-5`">
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { routes } from './router/'
 
-#nav {
-  padding: 30px;
+import NavDrawer from './components/NavDrawer/Index.vue'
+import AppBar from './components/AppBar/Index.vue'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  name: 'App',
+  data () {
+    return {
+      drawer: false
+    }
+  },
+  components: {
+    NavDrawer,
+    AppBar
+  },
+  computed: {
+    routes () {
+      return routes.filter((_, i) => i > 0)
     }
   }
+}
+</script>
+
+<style lang="scss" scoped>
+.container-max-width {
+  max-width: 1200px;
 }
 </style>
