@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { routes } from './router/'
+import routes from './router/routes'
 
 import NavDrawer from './components/NavDrawer/Index.vue'
 import AppBar from './components/AppBar/Index.vue'
