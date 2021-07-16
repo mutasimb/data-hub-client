@@ -1,7 +1,7 @@
 <template>
   <v-container style="max-width: 1200px; margin-top: 112px;">
     <router-view
-      :bmdKoboAreas="bmdKoboAreas"
+      :bmdKoboAreas="bmdKoboAreas ? bmdKoboAreas : []"
       :bmdKoboAreasLoading="$apollo.queries.bmdKoboAreas.loading"
       :bmdKoboData="bmdKoboDataSerialized"
       :bmdKoboDataLoading="$apollo.queries.bmdKoboData.loading"

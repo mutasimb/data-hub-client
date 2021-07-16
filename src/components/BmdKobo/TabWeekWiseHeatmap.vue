@@ -11,7 +11,7 @@
         <v-progress-circular class="mx-auto" indeterminate :color="$route.meta.color"></v-progress-circular>
       </v-card>
       <v-card
-        v-else-if="!bmdKoboData || !bmdKoboAreas"
+        v-else-if="!bmdKoboData || !bmdKoboAreas || !bmdKoboData.length || !bmdKoboAreas.length"
         outlined
         flat
         class="pa-4 d-flex align-center justify-center"
@@ -102,7 +102,8 @@ export default {
     //   ).map(el => ({ label: timeFormat('%B %Y')(el), value: el }))
     // },
     weeks () {
-      if (!this.bmdKoboData || this.bmdKoboDataLoading) return null
+      if (!this.bmdKoboData || !this.bmdKoboData.length || this.bmdKoboDataLoading) return null
+
       const extents = extent(this.bmdKoboData, d => d.tm)
       return timeWeek.range(
         timeWeek.floor(extents[0]),
