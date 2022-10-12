@@ -13,7 +13,7 @@ Vue.use(VueApollo)
 
 const apolloClient = new ApolloClient({
   uri: process.env.NODE_ENV === 'development'
-    ? 'http://localhost:9000/graphql'
+    ? 'http://localhost:9001/graphql'
     : process.env.VUE_APP_GRAPHQL_HTTP
 })
 
