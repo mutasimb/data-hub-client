@@ -139,7 +139,18 @@ export default {
     // },
     weeks: {
       handler (val) {
-        if (val && val.length) this.selectedWeek = val[0].value
+        if (val && val.length) {
+          const today = new Date()
+          const index = val.reduce(
+            (index, _, i, arr) => i === 0 ? i
+              : arr[i - 1].value > today && arr[i].value < today ? i
+                : index,
+            null
+          )
+
+          console.log(val[index])
+          this.selectedWeek = val[index].value
+        }
       },
       immediate: true
     }
