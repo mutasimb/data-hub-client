@@ -71,8 +71,8 @@ import { extent } from 'd3-array'
 import { timeWeek, timeDay } from 'd3-time'
 import { timeFormat } from 'd3-time-format'
 
-import Legend from './Legend.vue'
-import WeekWiseHeatmap from './WeekWiseHeatmap.vue'
+import Legend from '../../components/BmdKobo/Legend.vue'
+import WeekWiseHeatmap from '../../components/BmdKobo/WeekWiseHeatmap.vue'
 
 export default {
   name: 'BmdSynopticWeekWiseHeatmap',

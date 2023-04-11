@@ -74,8 +74,8 @@
 <script>
 import gql from 'graphql-tag'
 
-import CalendarHeatmap from './CalendarHeatmap.vue'
-import Legend from './Legend.vue'
+import CalendarHeatmap from '../../components/BmdKobo/CalendarHeatmap.vue'
+import Legend from '../../components/BmdKobo/Legend.vue'
 
 export default {
   name: 'BmdSynopticCalendarHeatmap',

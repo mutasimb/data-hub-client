@@ -9,19 +9,19 @@ export default [
     path: '/bmd-synoptic',
     name: 'BmdSynoptic',
     redirect: '/bmd-synoptic/week-wise-heatmap',
-    component: () => import('../components/BmdKobo/Index.vue'),
+    component: () => import('../pages/BmdSynoptic.vue'),
     meta: { title: 'BMD Synoptic Station Data', color: 'green' },
     children: [
       {
         path: 'week-wise-heatmap',
         name: 'BmdSynopticWeekWiseHeatmap',
-        component: () => import('../components/BmdKobo/TabWeekWiseHeatmap.vue'),
+        component: () => import('../pages/bmd-synoptic/TabWeekWiseHeatmap.vue'),
         meta: { title: 'BMD Synoptic Station Data', color: 'green' }
       },
       {
         path: 'calendar-heatmap',
         name: 'BmdSynopticCalendarHeatmap',
-        component: () => import('../components/BmdKobo/TabCalendarHeatmap.vue'),
+        component: () => import('../pages/bmd-synoptic/TabCalendarHeatmap.vue'),
         meta: { title: 'BMD Synoptic Station Data', color: 'green' }
       }
     ]
@@ -30,19 +30,19 @@ export default [
     path: '/bmd-forecast',
     name: 'BmdForecast',
     redirect: '/bmd-forecast/tab-1',
-    component: () => import('../components/BmdForecast/Index.vue'),
+    component: () => import('../pages/BmdForecast.vue'),
     meta: { title: 'BMD Forecast Data', color: 'blue' },
     children: [
       {
         path: 'tab-1',
         name: 'BmdForecastTab1',
-        component: () => import('../components/BmdForecast/Tab1.vue'),
+        component: () => import('../pages/bmd-forecast/Tab1.vue'),
         meta: { title: 'BMD Forecast Data', color: 'blue' }
       },
       {
         path: 'tab-2',
         name: 'BmdForecastTab2',
-        component: () => import('../components/BmdForecast/Tab2.vue'),
+        component: () => import('../pages/bmd-forecast/Tab2.vue'),
         meta: { title: 'BMD Forecast Data', color: 'blue' }
       }
     ]
@@ -50,7 +50,7 @@ export default [
   {
     path: '/fall-armyworm',
     name: 'FallArmyworm',
-    component: () => import('../components/FallArmyworm/Index.vue'),
+    component: () => import('../pages/FallArmyworm.vue'),
     meta: { title: 'Fall Armyworm Monitoring', color: 'orange' }
   }
 ]
